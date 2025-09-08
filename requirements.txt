@@ -1,0 +1,8 @@
+Flask==2.2.2
+geopy==2.2.0
+pandas==1.4.3
+numpy==1.23.1
+shapely==1.8.1
+<!-- Add this to the <head> section of your template, e.g., index.html -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
