@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <h1>Dashboard Page</h1>
+    
+    <h2>Entry Time Distribution</h2>
+    <p>{{ entry_time_distribution }}</p>
+
+    <h2>Entries (Last 7 Days)</h2>
+    <p>{{ entries_last_7_days }}</p>
+
+    <h2>Geospatial Map</h2>
+    <ul>
+      {% for point in geospatial_data %}
+        <li>Lat: {{ point.lat }}, Lon: {{ point.lon }}</li>
+      {% endfor %}
+    </ul>
+
+    <div id="map" style="height: 400px;"></div>
+    <script>
+        var map = L.map('map').setView([20.5937, 78.9629], 5); // Example: India center
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+    </script>
+</body>
+</html>
